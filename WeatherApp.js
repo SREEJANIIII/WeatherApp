@@ -1,6 +1,6 @@
 let city=document.getElementById("city");
 let submit=document.getElementById("bttn");
-let key=`2c18154b5715c9d026b673d20d1ad2e5`;
+let key=``;
 let temp=document.createElement("h1");
 let wind=document.createElement("h1");
 let humidity=document.createElement("h1");
