@@ -5,12 +5,12 @@ A simple JavaScript Weather Application that fetches real-time weather data from
 This project helped me learn how to work with APIs, handle asynchronous JavaScript, and dynamically update the UI based on real-time data.
 
 ---
-### 🚀 Live Demo
+## 🚀 Live Demo
 
-You can try the app here: click(https://sreejaniiii.github.io/WeatherApp/)
+You can try the app here:[click](https://sreejaniiii.github.io/WeatherApp/)
 
 ---
-### 📌 Features
+## 📌 Features
 
 Search weather by city name
 
@@ -27,7 +27,7 @@ Dynamic background changes based on weather conditions
 Handles invalid city names with error alerts
 
 ---
-### 🧠 Concepts Used
+## 🧠 Concepts Used
 
 This project helped me use my knowledge in:
 
@@ -46,7 +46,7 @@ Conditional logic
 Working with external APIs
 
 ---
-### 🛠️ Tech Stack
+## 🛠️ Tech Stack
 
 HTML
 
@@ -57,30 +57,14 @@ JavaScript
 OpenWeather API
 
 ---
-### 📁 Project Structure
-
-Weather_App
-│
-├── index.html
-├── WeatherApp.js
-├── WeatherApp.css
-├── bg1.jpg
-├── bg2.jpg
-├── bg3.jpg
-├── bg4.jpg
-├── bg5.jpg
-├── bg6.jpg
-└── bg7.jpg
-
----
-### 📌 Notes
+## 📌 Notes
 
 Weather data is fetched from the OpenWeather API.
 
 Background images change automatically depending on the weather condition ID returned by the API.
 
 ---
-### 🎯 Purpose of This Project
+## 🎯 Purpose of This Project
 
 This project is part of my JavaScript learning journey, focusing on:
 
