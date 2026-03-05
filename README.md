@@ -7,7 +7,7 @@ This project helped me learn how to work with APIs, handle asynchronous JavaScri
 ---
 ## 🚀 Live Demo
 
-You can try the app here:[click](https://sreejaniiii.github.io/WeatherApp/)
+You can try the app here: [click](https://sreejaniiii.github.io/WeatherApp/)
 
 ---
 ## 📌 Features
