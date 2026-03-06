@@ -97,7 +97,7 @@ else{
     hour=Math.floor(hour);
 }
 
-time.textContent=`HOUR: ${hour}:${min}`;
+time.textContent=`${hour}:${min}`;
     time.style.fontSize="2em";
     container.appendChild(time);
 console.log("City:", jsondata.name);
