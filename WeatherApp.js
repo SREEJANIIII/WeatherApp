@@ -18,7 +18,6 @@ submit.addEventListener("click",async ()=>{
     link=`https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${key}&units=metric`;
     data=await fetch(link);
     jsondata=await data.json();
-    console.log(jsondata);
     temp.textContent=`${jsondata.main.temp} °C`;
     temp.style.fontSize="4em";
     wind.textContent=`WIND:${jsondata.wind.speed} m/s`;
@@ -71,20 +70,34 @@ function bg(){
         document.body.style.backgroundImage="url('bg7.jpg')";
     }
     document.body.style.backgroundSize="cover";
-timezoneOffset =(jsondata.timezone);
-const cityTime = new Date((jsondata.dt + timezoneOffset) * 1000);
-const hour = cityTime/(1000 * 60 * 60) % 24;
+const timezoneOffset = jsondata.timezone;
 
+const cityTime = new Date((jsondata.dt + timezoneOffset) * 1000);
+let hour = cityTime.getUTCHours();
+let min = cityTime.getUTCMinutes();
 if(hour >= 6 && hour < 17){
     container.style.background="linear-gradient(0deg,#c7da20,#85cdda,#14c2e0)"; // day
 }
 else if(hour >= 17 && hour < 19){
-    container.style.background="linear-gradient(0deg,#ff9966,#ff5e62,#c06c84)"; // sunset
+    container.style.background = "linear-gradient(0deg, #ff7e5f, #feb47b, #87ceeb)";
 }
 else{
     container.style.background="linear-gradient(0deg,#0f2027,#203a43,#2c5364)"; // night
 }
-time.textContent=`HOUR: ${Math.round(hour)}:00`;
+if(min<10){
+    min=`0${Math.floor(min)}`;
+}
+else{
+    min=Math.floor(min);
+}
+if(hour<10){
+    hour=`0${Math.floor(hour)}`;
+}
+else{
+    hour=Math.floor(hour);
+}
+
+time.textContent=`HOUR: ${hour}:${min}`;
     time.style.fontSize="2em";
     container.appendChild(time);
 console.log("City:", jsondata.name);
