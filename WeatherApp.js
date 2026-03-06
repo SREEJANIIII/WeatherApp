@@ -5,11 +5,13 @@ let temp=document.createElement("h1");
 let wind=document.createElement("h1");
 let humidity=document.createElement("h1");
 let desc=document.createElement("h1");
+let time=document.createElement("h1");
 let icon=document.createElement("img");
 let container=document.getElementsByClassName("container")[0];
 let link;
 let data;
 let jsondata;
+let timezoneOffset;
 
 submit.addEventListener("click",async ()=>{ 
     try{
@@ -38,7 +40,7 @@ submit.addEventListener("click",async ()=>{
     container.appendChild(desc);
     container.appendChild(icon);
     bg();
-    }
+   }
     catch(error){
         alert("City not found. Please enter a valid city name.");
     }
@@ -69,4 +71,23 @@ function bg(){
         document.body.style.backgroundImage="url('bg7.jpg')";
     }
     document.body.style.backgroundSize="cover";
+timezoneOffset =(jsondata.timezone);
+const cityTime = new Date((jsondata.dt + timezoneOffset) * 1000);
+const hour = cityTime/(1000 * 60 * 60) % 24;
+
+if(hour >= 6 && hour < 17){
+    container.style.background="linear-gradient(0deg,#c7da20,#85cdda,#14c2e0)"; // day
+}
+else if(hour >= 17 && hour < 19){
+    container.style.background="linear-gradient(0deg,#ff9966,#ff5e62,#c06c84)"; // sunset
+}
+else{
+    container.style.background="linear-gradient(0deg,#0f2027,#203a43,#2c5364)"; // night
+}
+time.textContent=`HOUR: ${Math.round(hour)}:00`;
+    time.style.fontSize="2em";
+    container.appendChild(time);
+console.log("City:", jsondata.name);
+console.log("Timezone:", jsondata.timezone);
+console.log("Hour:", hour);
 }
